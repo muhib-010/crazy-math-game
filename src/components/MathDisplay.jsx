@@ -26,7 +26,7 @@ export default function MathDisplay(props){
     })
     
     return(
-        <div className="h-28 w-full sm:text-8xl text-6xl flex justify-center text-center mt-4">
+        <div className="w-fit mx-auto px-3 z-50 sm:text-8xl text-6xl h-fit flex justify-center text-center mt-4 bg-opacity-50 backdrop-blur-sm bg-transparent rounded-full">
             <h1>{displayMath}</h1>
         </div>
     )
