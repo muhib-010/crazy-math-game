@@ -8,7 +8,7 @@ export default function Result(props){
             <button className="h-12 w-40 rounded-full bg-purple-500 text-2xl font-bold text-white outline-0
                             transition duration-300 ease-in-out 
                             hover:brightness-90 
-                            active:scale-90"
+                            active:scale-90"zzzzzz
                         onClick={() => {props.restart(); props.setKey(0)}}>
                 Restart?
             </button>

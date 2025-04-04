@@ -4,7 +4,7 @@ export default function ProgressBar(props) {
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
-        const duration = 3000/props.mode; // 4 seconds
+        const duration = 3000/props.mode;
         const intervalTime = 50; // Update every 50ms
         const increment = (100 * intervalTime) / duration;
 

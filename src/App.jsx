@@ -6,6 +6,7 @@ import ScoreBoard from './components/ScoreBoard';
 import ProgressBar from './components/ProgressBar';
 import Result from './components/Result';
 import ModeSelector from './components/ModeSelector';
+import HighScore from './components/HighScore';
 
 function App() {
   const [rightAns, setRightAns] = useState(null);
@@ -16,18 +17,24 @@ function App() {
   const updateMath = () => {
     setKey(prevKey => prevKey + 1);
   };
+  const [highScore, setHighScore] = useState(0)
+
 
   function scoreUpdater(isCorrect) {
     if (isCorrect === rightAns) {
-      console.log('right');
       setScore(prevScore => prevScore + 1);
     } else {
-      console.log('wrong');
+      
+      updateHighScore(score)
+      console.log("updated score")
+      console.log(highScore)
       setIsLost(true);
     }
     updateMath();
   }
-
+  function updateHighScore(score){
+    setHighScore(prevHighScore => {prevHighScore < score? prevHighScore = score : prevHighScore = prevHighScore})
+  }
   function restart() {
     setScore(0);
     setIsLost(false);
@@ -73,7 +80,7 @@ function App() {
       {!isLost && <ScoreBoard score={score} />}
       {!isLost && <MathDisplay setRightAns={setRightAns} key={key} mode={mode}/>}
       {!isLost && <ButtonContainer rightAns={rightAns} scoreUpdater={scoreUpdater} />}
-      {isLost && <Result restart={restart} score={score} setKey={setKey}/>}
+      {isLost && <Result restart={restart} score={score} highScore={highScore} setKey={setKey}/>}
     </div>
   );
 }
