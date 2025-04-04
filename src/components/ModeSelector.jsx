@@ -15,7 +15,7 @@ export default function ModeSelect(props) {
     };
 
     return (
-        <div className="relative w-64 text-white mx-auto mt-4">
+        <div className="relative w-64 z-30 text-white mx-auto mt-4">
         <button
             onClick={() => setIsOpen(!isOpen)}
             className="w-full px-4 py-3 rounded-lg bg-gradient-to-r from-gray-800 to-gray-900 border border-gray-600 shadow-lg flex justify-between items-center transition-all duration-300 hover:shadow-xl"
